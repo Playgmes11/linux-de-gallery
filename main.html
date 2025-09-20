@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linux Desktop Environments - Responsive</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 10px;
+    background-color: #f4f4f4;
+}
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+/* Grid layout για PC / Mobile */
+.de-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Κάρτες DE */
+.de {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.de:hover {
+    transform: scale(1.03);
+}
+.de img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.de h2 {
+    text-align: center;
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+.de p {
+    text-align: center;
+    font-size: 0.9em;
+    padding: 0 10px 10px;
+    color: #555;
+}
+
+/* Lightbox fullscreen */
+#lightbox {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+#lightbox img {
+    max-width: 95%;
+    max-height: 85%;
+    border-radius: 8px;
+    transform: scale(0.8);
+    animation: zoomIn 0.25s forwards;
+}
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10000;
+}
+
+@keyframes zoomIn {
+    to { transform: scale(1);}
+}
+</style>
+</head>
+<body>
+
+<h1>Linux Desktop Environments</h1>
+
+<div class="de-container">
+    <!-- Όλα τα 15 DEs -->
+    <div class="de">
+        <img src="https://www.debugpoint.com/wp-content/uploads/2023/09/GNOME-Desktop-version-44.jpg" alt="GNOME Desktop">
+        <h2>GNOME</h2>
+        <p>Minimalistic, Ubuntu, Fedora</p>
+    </div>
+    <div class="de">
+        <img src="https://kde.org/announcements/plasma/6/6.4.0/fullscreen_with_apps.png" alt="KDE Plasma Desktop">
+        <h2>KDE Plasma</h2>
+        <p>Feature-rich, Kubuntu, KDE Neon</p>
+    </div>
+    <div class="de">
+        <img src="https://linuxiac.com/wp-content/uploads/2023/11/cinnamon6-desktop-environment.jpg" alt="Cinnamon Desktop">
+        <h2>Cinnamon</h2>
+        <p>Παραδοσιακό, Linux Mint</p>
+    </div>
+    <div class="de">
+        <img src="https://linuxconfig.org/wp-content/uploads/2019/12/09-how-to-install-mate-desktop-on-ubuntu-20-04-focal-fossa-linux.png" alt="MATE Desktop">
+        <h2>MATE</h2>
+        <p>GNOME 2 continuation, Ubuntu MATE, Mint MATE</p>
+    </div>
+    <div class="de">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/XFCE_4.20.png" alt="XFCE Desktop">
+        <h2>XFCE</h2>
+        <p>Lightweight, Xubuntu, Manjaro XFCE</p>
+    </div>
+    <div class="de">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTny9RGHQFYWclHCrEUezpmzLoTbkZHhJ-N3A&s" alt="LXQt Desktop">
+        <h2>LXQt</h2>
+        <p>Lightweight, Lubuntu</p>
+    </div>
+    <div class="de">
+        <img src="https://i0.wp.com/9to5linux.com/wp-content/uploads/2022/09/udde224.webp?fit=1920%2C1080&ssl=1" alt="Deepin Desktop">
+        <h2>Deepin</h2>
+        <p>Modern, Deepin Linux</p>
+    </div>
+    <div class="de">
+        <img src="https://b1490832.smushcdn.com/1490832/wp-content/uploads/2018/11/elementary-OS-Juno-Desktop.jpg?lossy=2&strip=1&webp=1" alt="Pantheon Desktop">
+        <h2>Pantheon</h2>
+        <p>Simple & elegant, elementary OS</p>
+    </div>
+    <div class="de">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/BudgieDesktop-v10.7.jpg" alt="Budgie Desktop">
+        <h2>Budgie</h2>
+        <p>Modern, Solus, Ubuntu Budgie</p>
+    </div>
+    <div class="de">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_e1_aheopihSQojujJNAdOVgxMcuvVAMwXQ&s" alt="Enlightenment Desktop">
+        <h2>Enlightenment</h2>
+        <p>Lightweight, Bodhi Linux, Elive</p>
+    </div>
+    <div class="de">
+        <img src="https://fedoraproject.org/assets/images/spins/screenshot-lxde.jpg" alt="LXDE Desktop">
+        <h2>LXDE</h2>
+        <p>Πολύ ελαφρύ, παλιοί υπολογιστές</p>
+    </div>
+    <div class="de">
+        <img src="https://ramsdenj.com/images/openbox-configuration/desktop-large.jpg" alt="Openbox Desktop">
+        <h2>Openbox</h2>
+        <p>Fully customizable WM</p>
+    </div>
+    <div class="de">
+        <img src="https://opensource.com/sites/default/files/uploads/i3_screenshot.png" alt="i3 Desktop">
+        <h2>i3</h2>
+        <p>Tiling WM, power users</p>
+    </div>
+    <div class="de">
+        <img src="https://awesomewm.org/images/screen.png" alt="Awesome Desktop">
+        <h2>Awesome WM</h2>
+        <p>Dynamic tiling WM, Lua</p>
+    </div>
+    <div class="de">
+        <img src="https://mxlinux.org/wp-content/uploads/2020/05/MXFB_21_desktop-1024x576.jpg" alt="Fluxbox Desktop">
+        <h2>Fluxbox</h2>
+        <p>Light & fast WM, Blackbox-based</p>
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <span id="closeBtn">&times;</span>
+    <img src="" alt="Fullscreen Image">
+</div>
+
+<script>
+const images = document.querySelectorAll('.de img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = lightbox.querySelector('img');
+const closeBtn = document.getElementById('closeBtn');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImage.src = img.src;
+        lightbox.style.display = 'flex';
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImage.src = '';
+});
+
+lightbox.addEventListener('click', e => {
+    if(e.target !== lightboxImage && e.target !== closeBtn) {
+        lightbox.style.display = 'none';
+        lightboxImage.src = '';
+    }
+});
+</script>
+
+</body>
+</html>
